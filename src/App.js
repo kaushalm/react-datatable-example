@@ -19,6 +19,7 @@ export default function App() {
 
   return (
     <div>
+      <input type="text" />
       <Datatable data={data} />
     </div>
   );
