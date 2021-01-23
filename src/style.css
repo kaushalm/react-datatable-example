@@ -7,14 +7,21 @@ table,
 tr,
 th,
 td {
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 th {
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 input {
   padding: 5px;
   margin: 5px;
+}
+
+tr:nth-child(odd) {
+  background-color: lightblue;
+}
+tr:nth-child(even) {
+  background-color: aliceblue;
 }
