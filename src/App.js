@@ -17,14 +17,10 @@ export default function App() {
       .then(response => response.json())
       .then(json => {
         setData(json);
-        //console.log(json);
-        window.originaldata = [...originaldata, ...json];
       });
   }, []);
 
   function search(event) {
-    //console.log(window.originaldata);
-    //console.log(event.target.value);
     let filtered = data.filter(d => {
       let serchabledata = d.userId + d.id + d.title + d.body;
       if (serchabledata.includes(event.target.value)) {
@@ -32,11 +28,11 @@ export default function App() {
       }
     });
 
-    console.log(filtered);
     if (filtered.length > 0) {
       setData(filtered);
     } else {
-      console.log(window.originaldata);
+      //set back to original dta array
+      //figure out how to preserve data between renders other than using redux
       setData(window.originaldata);
     }
   }
